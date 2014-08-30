@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="f_devs_sitemap.adapter.static_route.class">FDevs\SitemapBundle\Adapter\StaticRouting</parameter>
+        <parameter key="f_devs_sitemap.adapter.document_route.class">FDevs\SitemapBundle\Adapter\DocumentRouting</parameter>
+        <parameter key="f_devs_sitemap.generator.class">FDevs\SitemapBundle\Service\Sitemap</parameter>
+        <parameter key="f_devs_sitemap.generator_index.class">FDevs\SitemapBundle\Service\SitemapIndex</parameter>
+        <parameter key="f_devs_sitemap.manager.class">FDevs\SitemapBundle\Service\ManagerSitemaps</parameter>
+    </parameters>
+
+    <services>
+        <service id="f_devs_sitemap.adapter.static_route" class="%f_devs_sitemap.adapter.static_route.class%" public="false">
+            <argument type="service" id="router"/>
+            <tag name="f_devs_sitemap.adapter"/>
+        </service>
+
+        <service id="f_devs_sitemap.adapter.document_route" class="%f_devs_sitemap.adapter.document_route.class%" public="false">
+            <argument type="service" id="security.context"/>
+            <argument type="service" id="doctrine_mongodb"/>
+            <call method="setUrlGenerator">
+                <argument type="service" id="router"/>
+            </call>
+        </service>
+
+        <service id="f_devs_sitemap.generator" class="%f_devs_sitemap.generator.class%" public="false">
+            <argument>%f_devs_sitemap.web_dir%</argument>
+        </service>
+
+        <service id="f_devs_sitemap.generator_index" class="%f_devs_sitemap.generator_index.class%" public="false">
+            <argument>%f_devs_sitemap.web_dir%</argument>
+            <argument>%f_devs_sitemap.domain%</argument>
+            <argument>%f_devs_sitemap.sitemaps_dir%</argument>
+            <call method="setSiteMapGenerator">
+                <argument type="service" id="f_devs_sitemap.generator"/>
+            </call>
+        </service>
+
+        <service id="f_devs_sitemap.manager" class="%f_devs_sitemap.manager.class%">
+            <argument type="service" id="f_devs_sitemap.default"/>
+            <argument>%f_devs_sitemap.filename%</argument>
+            <argument>%f_devs_sitemap.generate_sitemapindex%</argument>
+            <argument>%f_devs_sitemap.parameters%</argument>
+        </service>
+    </services>
+
+</container>

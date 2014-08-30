@@ -1,0 +1,35 @@
+{
+    "name": "fdevs/sitemap-bundle",
+    "type": "symfony-bundle",
+    "description": "4devs SitemapBundle",
+    "keywords": ["Geo"],
+    "homepage": "https://github.com/4devs/SitemapBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Samusev",
+            "email": "andrey_simfi@list.ru",
+            "homepage": "http://andrey.4devs.io"
+        },
+        {
+            "name": "4devs Community",
+            "homepage": "https://github.com/4devs/SitemapBundle/contributors"
+        }
+
+    ],
+    "require": {
+        "php": ">=5.4",
+        "symfony/framework-bundle": "~2.5"
+    },
+    "require-dev": {
+        "doctrine/mongodb-odm-bundle": "3.0.*@dev",
+        "doctrine/mongodb-odm": "1.0.*@dev"
+    },
+    "suggest": {
+        "doctrine/mongodb-odm-bundle": "for use dynamic generate document"
+    },
+    "autoload": {
+        "psr-0": {"FDevs\\SitemapBundle": ""}
+    },
+    "target-dir": "FDevs/SitemapBundle"
+}
