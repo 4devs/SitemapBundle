@@ -56,13 +56,7 @@ class StaticRouting extends AbstractRouting
          */
         foreach ($routes as $name => $route) {
             $name = method_exists($route, 'getName') ? $route->getName() : $name;
-            $countVariables = count(
-                array_diff(
-                    $route->compile()->getVariables(),
-                    array_keys(array_merge($this->params, $route->getDefaults()))
-                )
-            );
-            if (is_string($name) && !$countVariables) {
+            if (is_string($name) && self::isRouteVariablesComplete($route, $this->params)) {
                 $this->urlCollection->set($name, $route);
             }
         }

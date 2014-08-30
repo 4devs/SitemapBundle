@@ -5,6 +5,7 @@ namespace FDevs\SitemapBundle\Adapter;
 use Doctrine\Bundle\MongoDBBundle\ManagerRegistry;
 use Doctrine\ODM\MongoDB\DocumentRepository;
 use Symfony\Cmf\Bundle\RoutingBundle\Model\Route as CmfRoute;
+use Symfony\Component\Routing\Route;
 use Symfony\Component\Security\Core\SecurityContext;
 
 class DocumentRouting extends AbstractRouting
@@ -19,8 +20,10 @@ class DocumentRouting extends AbstractRouting
     /**
      * init
      *
-     * @param DocumentRepository $repo
-     * @param string             $class
+     * @param SecurityContext $securityContext
+     * @param ManagerRegistry $repo
+     * @param string|null     $manager
+     * @param string          $class
      */
     public function __construct(SecurityContext $securityContext, ManagerRegistry $repo, $manager = null, $class)
     {
@@ -46,7 +49,10 @@ class DocumentRouting extends AbstractRouting
         /** @var \FDevs\RoutingBundle\Doctrine\Mongodb\Route $route */
         $route = $this->routes->current();
         $url = null;
-        if (method_exists($route, 'getName')) {
+        if ($route instanceof Route
+            && method_exists($route, 'getName')
+            && self::isRouteVariablesComplete($route, $this->params)) {
+
             if ($route instanceof CmfRoute) {
                 try {
                     $content = $route->getContent();
