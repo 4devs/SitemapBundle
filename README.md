@@ -5,7 +5,7 @@ SitemapBundle
 Documentation
 -------------
 
-use [GeoJSON implementation for PHP](https://github.com/jmikola/geojson) for the stored in the database
+use rules [Sitemaps XML format](http://www.sitemaps.org/protocol.html) for the generate sitemap
 
 Installation
 ------------
