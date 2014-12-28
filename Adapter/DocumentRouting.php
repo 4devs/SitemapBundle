@@ -58,7 +58,7 @@ class DocumentRouting extends AbstractRouting
                     $content = $route->getContent();
                     if ($route->getDefault('sitemap')) {
                         $url = $this->generateUrl($route->getName(), $route);
-                    } elseif ($content && $this->securityContext->isGranted('VIEW', $content)) {
+                    } elseif ($content && $this->securityContext->isGranted('VIEW_ANONYMOUS', $content)) {
                         $route->setDefault('priority', 0.7);
                         $url = $this->generateUrl($route->getName(), $route);
                     }
