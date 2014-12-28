@@ -14,6 +14,6 @@ class RouteParamsTest extends WebTestCase
         $data = array_fill(0, $num, array_fill(0, $mun, 'value'));
         $result = RouteParams::prepareParams($data);
 
-        $this->assertCount(pow($mun,$num), $result);
+        $this->assertCount(pow($mun, $num), $result);
     }
 }

@@ -15,7 +15,6 @@ use Symfony\Component\Routing\Route;
 
 abstract class AbstractRouting implements AdapterInterface
 {
-
     /**
      * @var array
      */

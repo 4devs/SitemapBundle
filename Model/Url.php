@@ -11,7 +11,6 @@ namespace FDevs\SitemapBundle\Model;
 
 class Url extends AbstractElement
 {
-
     /**
      * @var string
      */
@@ -69,7 +68,7 @@ class Url extends AbstractElement
      */
     public function getChangefreq()
     {
-        return $this->changefreq ? : ChangeFrequency::WEEKLY;
+        return $this->changefreq ?: ChangeFrequency::WEEKLY;
     }
 
     /**
@@ -131,5 +130,4 @@ class Url extends AbstractElement
     {
         return $this->priority;
     }
-
 }

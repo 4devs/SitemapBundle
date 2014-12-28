@@ -11,7 +11,6 @@ namespace FDevs\SitemapBundle\Model;
 
 class Sitemap extends AbstractElement
 {
-
     /**
      * @var string
      */
@@ -82,5 +81,4 @@ class Sitemap extends AbstractElement
     {
         return $this->loc;
     }
-
 }

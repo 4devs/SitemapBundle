@@ -52,18 +52,16 @@ class DocumentRouting extends AbstractRouting
         if ($route instanceof Route
             && method_exists($route, 'getName')
             && self::isRouteVariablesComplete($route, $this->params)) {
-
             if ($route instanceof CmfRoute) {
                 try {
                     $content = $route->getContent();
                     if ($route->getDefault('sitemap')) {
                         $url = $this->generateUrl($route->getName(), $route);
-                    } elseif ($content && $this->securityContext->isGranted('VIEW', $content)) {
+                    } elseif ($content && $this->securityContext->isGranted('VIEW_ANONYMOUS', $content)) {
                         $route->setDefault('priority', 0.7);
                         $url = $this->generateUrl($route->getName(), $route);
                     }
                 } catch (\Exception $e) {
-
                 }
             } else {
                 $url = $this->generateUrl($route->getName(), $route);

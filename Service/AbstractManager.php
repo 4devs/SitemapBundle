@@ -4,7 +4,6 @@ namespace FDevs\SitemapBundle\Service;
 
 abstract class AbstractManager
 {
-
     /** @var \DOMDocument */
     protected $dom;
 
@@ -91,9 +90,9 @@ abstract class AbstractManager
      */
     public function getFileName(array $params = [], $dir = '')
     {
-        $strParams = count($params) ? implode('.', $params) . '.' : '';
+        $strParams = count($params) ? implode('.', $params).'.' : '';
 
-        return $this->webPath . DIRECTORY_SEPARATOR . $dir . $strParams . $this->filename . '.xml';
+        return $this->webPath.DIRECTORY_SEPARATOR.$dir.$strParams.$this->filename.'.xml';
     }
 
     /**
