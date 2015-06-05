@@ -15,7 +15,6 @@ use Symfony\Component\Routing\RouterInterface;
 
 class StaticRouting extends AbstractRouting
 {
-
     /**
      * @var ArrayCollection
      */
@@ -101,5 +100,4 @@ class StaticRouting extends AbstractRouting
     {
         return !!$this->urlCollection->current();
     }
-
 }

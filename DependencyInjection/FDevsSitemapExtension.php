@@ -23,22 +23,22 @@ class FDevsSitemapExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter(
-            $this->getAlias() . '.web_dir',
-            $config['web_dir'] ?: $container->getParameter('kernel.root_dir') . "/../web"
+            $this->getAlias().'.web_dir',
+            $config['web_dir'] ?: $container->getParameter('kernel.root_dir')."/../web"
         );
-        $container->setParameter($this->getAlias() . '.sitemaps_dir', $config['sitemaps_dir']);
-        $container->setParameter($this->getAlias() . '.domain', $config['domain']);
-        $container->setParameter($this->getAlias() . '.filename', $config['filename']);
-        $container->setParameter($this->getAlias() . '.parameters', $config['parameters']);
-        $container->setParameter($this->getAlias() . '.generate_sitemapindex', $config['generate_sitemapindex']);
+        $container->setParameter($this->getAlias().'.sitemaps_dir', $config['sitemaps_dir']);
+        $container->setParameter($this->getAlias().'.domain', $config['domain']);
+        $container->setParameter($this->getAlias().'.filename', $config['filename']);
+        $container->setParameter($this->getAlias().'.parameters', $config['parameters']);
+        $container->setParameter($this->getAlias().'.generate_sitemapindex', $config['generate_sitemapindex']);
 
         if ($config['generate_sitemapindex']) {
-            $container->setAlias($this->getAlias() . '.default', $this->getAlias() . '.generator_index');
+            $container->setAlias($this->getAlias().'.default', $this->getAlias().'.generator_index');
         } else {
-            $container->setAlias($this->getAlias() . '.default', $this->getAlias() . '.generator');
+            $container->setAlias($this->getAlias().'.default', $this->getAlias().'.generator');
         }
 
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
         if ($config['document_class'] && $container->hasDefinition('f_devs_sitemap.adapter.document_route')) {

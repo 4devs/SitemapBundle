@@ -11,7 +11,6 @@ namespace FDevs\SitemapBundle\Adapter;
 
 class RouteParams
 {
-
     public static function prepareParams($params = array())
     {
         $positions = array_combine(array_keys($params), array_fill(0, count($params), 0));

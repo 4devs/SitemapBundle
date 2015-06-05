@@ -53,5 +53,4 @@ class ManagerSitemaps
     {
         return $this->manager->getFileName();
     }
-
 }

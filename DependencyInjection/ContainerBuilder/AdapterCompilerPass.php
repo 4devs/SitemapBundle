@@ -28,5 +28,4 @@ class AdapterCompilerPass implements CompilerPassInterface
             $definition->addMethodCall('addAdapter', [new Reference($id)]);
         }
     }
-
 }

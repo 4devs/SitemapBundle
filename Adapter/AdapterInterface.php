@@ -11,7 +11,6 @@ namespace FDevs\SitemapBundle\Adapter;
 
 interface AdapterInterface
 {
-
     /**
      * run commands before start iterate url
      *
