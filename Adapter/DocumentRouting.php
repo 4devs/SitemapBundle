@@ -18,7 +18,7 @@ class DocumentRouting extends AbstractRouting
     private $securityContext;
 
     /**
-     * init
+     * init.
      *
      * @param SecurityContext $securityContext
      * @param ManagerRegistry $repo
@@ -32,7 +32,7 @@ class DocumentRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -42,7 +42,7 @@ class DocumentRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function current()
     {
@@ -72,7 +72,7 @@ class DocumentRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function next()
     {
@@ -82,7 +82,7 @@ class DocumentRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function first()
     {
@@ -92,7 +92,7 @@ class DocumentRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function valid()
     {

@@ -6,13 +6,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace FDevs\SitemapBundle\Adapter;
 
 interface AdapterInterface
 {
     /**
-     * run commands before start iterate url
+     * run commands before start iterate url.
      *
      * @return self
      */
@@ -47,7 +46,7 @@ interface AdapterInterface
     public function first();
 
     /**
-     * Checks if current position is valid
+     * Checks if current position is valid.
      *
      * @return bool
      */

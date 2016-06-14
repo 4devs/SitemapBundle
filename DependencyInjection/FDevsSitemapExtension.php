@@ -8,14 +8,14 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
 /**
- * This is the class that loads and manages your bundle configuration
+ * This is the class that loads and manages your bundle configuration.
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
 class FDevsSitemapExtension extends Extension
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -24,7 +24,7 @@ class FDevsSitemapExtension extends Extension
 
         $container->setParameter(
             $this->getAlias().'.web_dir',
-            $config['web_dir'] ?: $container->getParameter('kernel.root_dir')."/../web"
+            $config['web_dir'] ?: $container->getParameter('kernel.root_dir').'/../web'
         );
         $container->setParameter($this->getAlias().'.sitemaps_dir', $config['sitemaps_dir']);
         $container->setParameter($this->getAlias().'.domain', $config['domain']);

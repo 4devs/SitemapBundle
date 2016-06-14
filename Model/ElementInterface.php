@@ -1,10 +1,11 @@
 <?php
+
 namespace FDevs\SitemapBundle\Model;
 
 interface ElementInterface
 {
     /**
-     * get Tags
+     * get Tags.
      *
      * @return array
      */

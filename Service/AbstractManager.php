@@ -17,7 +17,7 @@ abstract class AbstractManager
     protected $attr = ['xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9'];
 
     /**
-     * generate sitemap
+     * generate sitemap.
      *
      * @param array       $params
      * @param \DOMElement $element
@@ -27,7 +27,7 @@ abstract class AbstractManager
     abstract public function generate(array $params = [], \DOMElement $element);
 
     /**
-     * init service
+     * init service.
      *
      * @param array $params
      *
@@ -54,7 +54,7 @@ abstract class AbstractManager
     }
 
     /**
-     * get Root Element
+     * get Root Element.
      *
      * @return \DOMElement
      */
@@ -75,7 +75,7 @@ abstract class AbstractManager
     }
 
     /**
-     * set DomDocument
+     * set DomDocument.
      *
      * @param \DOMDocument $doc
      */
@@ -85,7 +85,7 @@ abstract class AbstractManager
     }
 
     /**
-     * create Dom Document
+     * create Dom Document.
      *
      * @return \DOMDocument
      */
@@ -99,7 +99,7 @@ abstract class AbstractManager
     }
 
     /**
-     * get File Name
+     * get File Name.
      *
      * @param array  $params
      * @param string $dir
@@ -114,7 +114,7 @@ abstract class AbstractManager
     }
 
     /**
-     * set File Name
+     * set File Name.
      *
      * @param string $filename
      *
@@ -128,7 +128,7 @@ abstract class AbstractManager
     }
 
     /**
-     * get Namespace list
+     * get Namespace list.
      *
      * @return array
      */

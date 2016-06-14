@@ -14,7 +14,7 @@ class ManagerSitemaps
     private $params = [];
 
     /**
-     * init
+     * init.
      *
      * @param AbstractManager $manager
      * @param string          $fileName
@@ -30,7 +30,7 @@ class ManagerSitemaps
     }
 
     /**
-     * generate
+     * generate.
      *
      * @return \DOMDocument
      */
@@ -45,7 +45,7 @@ class ManagerSitemaps
     }
 
     /**
-     * get File Name
+     * get File Name.
      *
      * @return string
      */

@@ -16,7 +16,7 @@ class SitemapIndex extends AbstractManager
     private $domain;
 
     /**
-     * init
+     * init.
      *
      * @param string $webPath
      * @param string $domain

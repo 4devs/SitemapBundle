@@ -1,4 +1,5 @@
 <?php
+
 namespace FDevs\SitemapBundle\Model;
 
 abstract class AbstractElement implements ElementInterface
