@@ -13,6 +13,9 @@ abstract class AbstractManager
     /** @var string */
     protected $filename;
 
+    /** @var array */
+    protected $attr = ['xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9'];
+
     /**
      * generate sitemap
      *
@@ -38,6 +41,19 @@ abstract class AbstractManager
     abstract protected function getRootName();
 
     /**
+     * @param string $name
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function addAttribute($name, $value)
+    {
+        $this->attr[$name] = $value;
+
+        return $this;
+    }
+
+    /**
      * get Root Element
      *
      * @return \DOMElement
@@ -47,11 +63,13 @@ abstract class AbstractManager
         $root = $this->dom->createElement($this->getRootName());
         $this->dom->appendChild($root);
 
-        // Add attribute of urlset
-        $xmlns = $this->dom->createAttribute('xmlns');
-        $text = $this->dom->createTextNode('http://www.sitemaps.org/schemas/sitemap/0.9');
-        $root->appendChild($xmlns);
-        $xmlns->appendChild($text);
+        // Add attribute of root element
+        foreach ($this->getAttributeList() as $attr => $namespace) {
+            $xmlns = $this->dom->createAttribute($attr);
+            $text = $this->dom->createTextNode($namespace);
+            $root->appendChild($xmlns);
+            $xmlns->appendChild($text);
+        }
 
         return $root;
     }
@@ -107,5 +125,15 @@ abstract class AbstractManager
         $this->filename = $filename;
 
         return $this;
+    }
+
+    /**
+     * get Namespace list
+     *
+     * @return array
+     */
+    protected function getAttributeList()
+    {
+        return $this->attr;
     }
 }
