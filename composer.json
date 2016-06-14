@@ -2,7 +2,9 @@
     "name": "fdevs/sitemap-bundle",
     "type": "symfony-bundle",
     "description": "4devs SitemapBundle",
-    "keywords": ["Geo"],
+    "keywords": [
+        "Geo"
+    ],
     "homepage": "https://github.com/4devs/SitemapBundle",
     "license": "MIT",
     "authors": [
@@ -15,18 +17,20 @@
             "name": "4devs Community",
             "homepage": "https://github.com/4devs/SitemapBundle/contributors"
         }
-
     ],
     "require": {
         "php": ">=5.4",
         "symfony/framework-bundle": ">=2.3,<3.0"
     },
-    "require-dev": {},
+    "require-dev": {
+        "symfony/console": "~2.8|~3.0"
+    },
     "suggest": {
         "doctrine/mongodb-odm-bundle": "for use dynamic generate document"
     },
     "autoload": {
-        "psr-0": {"FDevs\\SitemapBundle": ""}
-    },
-    "target-dir": "FDevs/SitemapBundle"
+        "psr-4": {
+            "FDevs\\SitemapBundle\\": ""
+        }
+    }
 }
