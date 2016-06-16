@@ -6,7 +6,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace FDevs\SitemapBundle\Adapter;
 
 class RouteParams
@@ -39,7 +38,7 @@ class RouteParams
         // increment position
         $incremented = false;
         foreach ($positions as $key => $position) {
-            $position++;
+            ++$position;
             if ($position < count($original[$key])) {
                 $positions[$key] = $position;
                 $incremented = true;

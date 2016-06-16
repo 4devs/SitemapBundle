@@ -6,7 +6,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace FDevs\SitemapBundle\Adapter;
 
 use FDevs\SitemapBundle\Model\Url;
@@ -26,7 +25,7 @@ abstract class AbstractRouting implements AdapterInterface
     protected $urlGenerator;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setParams(array $parameters = [])
     {
@@ -36,7 +35,7 @@ abstract class AbstractRouting implements AdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setUrlGenerator(UrlGeneratorInterface $urlGenerator)
     {
@@ -71,7 +70,7 @@ abstract class AbstractRouting implements AdapterInterface
     }
 
     /**
-     * is Route Variables Complete
+     * is Route Variables Complete.
      *
      * @param Route $route
      * @param array $variables

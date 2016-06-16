@@ -6,7 +6,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace FDevs\SitemapBundle\Model;
 
 class Sitemap extends AbstractElement
@@ -22,11 +21,10 @@ class Sitemap extends AbstractElement
     private $lastmod;
 
     /**
-     * init
+     * init.
      *
      * @param string    $loc
      * @param \DateTime $lastmod
-     *
      */
     public function __construct($loc, \DateTime $lastmod = null)
     {
@@ -35,7 +33,7 @@ class Sitemap extends AbstractElement
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTags()
     {

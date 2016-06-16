@@ -6,7 +6,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace FDevs\SitemapBundle\Model;
 
 class Url extends AbstractElement
@@ -32,7 +31,7 @@ class Url extends AbstractElement
     private $priority = 0.7;
 
     /**
-     * init
+     * init.
      *
      * @param string $loc
      */
@@ -42,7 +41,7 @@ class Url extends AbstractElement
     }
 
     /**
-     * get Tags
+     * get Tags.
      *
      * @return array
      */

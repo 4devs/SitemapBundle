@@ -6,7 +6,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace FDevs\SitemapBundle\Service;
 
 use FDevs\SitemapBundle\Adapter\AdapterInterface;
@@ -24,7 +23,7 @@ class Sitemap extends AbstractManager
     private $insert = [];
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function getRootName()
     {
@@ -32,7 +31,7 @@ class Sitemap extends AbstractManager
     }
 
     /**
-     * init
+     * init.
      *
      * @param string $dir
      */
@@ -42,7 +41,7 @@ class Sitemap extends AbstractManager
     }
 
     /**
-     * add Adapter
+     * add Adapter.
      *
      * @param AdapterInterface $urlSets
      *
@@ -56,7 +55,7 @@ class Sitemap extends AbstractManager
     }
 
     /**
-     * init all Adapters
+     * init all Adapters.
      *
      * @param array $params
      *
@@ -73,7 +72,7 @@ class Sitemap extends AbstractManager
     }
 
     /**
-     * generate Sitemap
+     * generate Sitemap.
      *
      * @param array $params
      *
@@ -113,7 +112,7 @@ class Sitemap extends AbstractManager
     }
 
     /**
-     * get Lastmod
+     * get Lastmod.
      *
      * @return string
      */
@@ -123,7 +122,7 @@ class Sitemap extends AbstractManager
     }
 
     /**
-     * set Last Mod
+     * set Last Mod.
      *
      * @param Url $url
      *

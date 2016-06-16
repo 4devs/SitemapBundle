@@ -6,7 +6,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace FDevs\SitemapBundle\Adapter;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -26,7 +25,7 @@ class StaticRouting extends AbstractRouting
     private $router;
 
     /**
-     * init
+     * init.
      *
      * @param RouterInterface $router
      */
@@ -38,7 +37,7 @@ class StaticRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function init(array $params = [])
     {
@@ -50,7 +49,7 @@ class StaticRouting extends AbstractRouting
             }
         );
         /**
-         * @var string                           $name
+         * @var string
          * @var \Symfony\Component\Routing\Route $route
          */
         foreach ($routes as $name => $route) {
@@ -64,7 +63,7 @@ class StaticRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function current()
     {
@@ -74,7 +73,7 @@ class StaticRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function next()
     {
@@ -84,7 +83,7 @@ class StaticRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function first()
     {
@@ -94,10 +93,10 @@ class StaticRouting extends AbstractRouting
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function valid()
     {
-        return !!$this->urlCollection->current();
+        return (bool) $this->urlCollection->current();
     }
 }
