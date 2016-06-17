@@ -10,7 +10,42 @@ use rules [Sitemaps XML format](http://www.sitemaps.org/protocol.html) for the g
 Installation
 ------------
 
-All the installation instructions are located in [documentation](https://github.com/4devs/sitemap-bundle/blob/master/Resources/doc/index.md).
+Bundle uses Composer, please checkout the [composer website](http://getcomposer.org) for more information.
+
+The simple following command will install `sitemap-bundle` into your project. It also add a new
+entry in your `composer.json` and update the `composer.lock` as well.
+
+
+```bash
+composer require fdevs/sitemap-bundle
+```
+
+add to your `app/AppKernel.php`
+
+```php
+<?php
+
+use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\Config\Loader\LoaderInterface;
+
+class AppKernel extends Kernel
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function registerBundles()
+    {
+        $bundles = [
+        //....
+            new FDevs\SitemapBundle\FDevsSitemapBundle(),
+        ];
+        //....
+
+        return $bundles;
+    }
+    //....
+}
+```
 
 License
 -------

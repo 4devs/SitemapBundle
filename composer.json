@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "4devs SitemapBundle",
     "keywords": [
-        "Geo"
+        "sitemap"
     ],
     "homepage": "https://github.com/4devs/sitemap-bundle",
     "license": "MIT",
@@ -20,11 +20,10 @@
     ],
     "require": {
         "php": ">=5.4",
-        "symfony/framework-bundle": ">=2.3,<3.0",
-        "symfony/property-access": "~2.8|~3.1"
+        "fdevs/sitemap-bridge": "~0.1",
+        "fdevs/framework-bundle": "~2.8|~3.0"
     },
     "require-dev": {
-        "symfony/console": "~2.8|~3.0"
     },
     "suggest": {
         "doctrine/mongodb-odm-bundle": "for use dynamic generate document"
