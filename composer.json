@@ -21,7 +21,7 @@
     "require": {
         "php": ">=5.4",
         "fdevs/sitemap-bridge": "~0.1",
-        "fdevs/framework-bundle": "~2.8|~3.0"
+        "symfony/framework-bundle": "~2.8|~3.0"
     },
     "require-dev": {
     },
